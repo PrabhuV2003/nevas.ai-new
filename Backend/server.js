@@ -7,7 +7,11 @@ dotenv.config()
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: ["https://nevas.ai", "https://www.nevas.ai"],
+  methods: ["POST"],
+}))
+
 app.use(express.json())
 
 /* ================= SMTP CONFIG (OUTLOOK) ================= */

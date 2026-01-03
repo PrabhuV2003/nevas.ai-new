@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6"
 import { IoMdMail } from "react-icons/io"
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6"
 import { SiInstagram } from "react-icons/si"
-import { assets } from '../assets/assest'
+import { assets } from '../assets/assets'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -63,7 +63,7 @@ const ContactSection = () => {
     setLoading(true)
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
