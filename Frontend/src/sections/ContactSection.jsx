@@ -141,15 +141,15 @@ const ContactSection = () => {
               <div className="space-y-6">
                 <div className="flex gap-6 items-center">
                   <PiPhoneCallFill />
-                  <span>+1012 3456 789</span>
+                  <span>+91 9884042931</span>
                 </div>
                 <div className="flex gap-6 items-center">
                   <IoMdMail />
-                  <span>demo@gmail.com</span>
+                  <span>info@nevastech.com</span>
                 </div>
                 <div className="flex gap-6 items-start">
                   <FaLocationDot className="mt-1" />
-                  <span>132 Dartmouth Street Boston, Massachusetts</span>
+                  <span>39, Elumalai Street, West Tambaram Chennai - 600 045, India</span>
                 </div>
               </div>
 
