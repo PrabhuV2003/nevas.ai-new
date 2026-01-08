@@ -1,5 +1,5 @@
 import React from "react";
-import { assets } from "../assets/assest";
+import { assets } from "../assets/assets";
 
 /* ---------- IMAGE ICONS ---------- */
 const ICON_IMAGES = {

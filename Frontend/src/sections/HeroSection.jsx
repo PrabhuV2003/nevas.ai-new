@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Navbar from './Navbar'
-import { assets } from '../assets/assest'
+import { assets } from "../assets/assets";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 /* ================== ADD: useInView hook ================== */

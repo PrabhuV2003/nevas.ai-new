@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { assets } from '../assets/assest'
+import { assets } from "../assets/assets";
 
 const brands = [
   assets.C1,

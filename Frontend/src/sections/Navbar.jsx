@@ -1,7 +1,8 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
-import { assets } from "../assets/assest";
+import { assets } from "../assets/assets";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import NavBtn from "../ui/Buttons/NavBtn";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,10 +41,7 @@ const Navbar = () => {
 
         {/* RIGHT */}
         <div className="hidden lg:block">
-          <a href="#contact" className="text-[14px] font-cervino font-semibold tracking-[0.25em]
-            uppercase border-b border-black pb-0.5 hover:opacity-75">
-            Schedule a Meeting
-          </a>
+          <NavBtn />
         </div>
 
         {/* Mobile Hamburger */}

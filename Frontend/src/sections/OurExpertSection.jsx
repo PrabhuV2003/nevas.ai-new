@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { GoArrowUpRight } from "react-icons/go";
-import { assets } from '../assets/assest';
+import { assets } from "../assets/assets";
 
 /* ---------- reusable in-view hook ---------- */
 const useInView = (threshold = 0.2) => {

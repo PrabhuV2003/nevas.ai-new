@@ -5,12 +5,23 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
+
 ::-webkit-scrollbar {
   display: none ;
+}
+
+.viewport {
+  margin: 0 0 0 0;
+  width: 100vw;
+  overflow-x: hidden;
+  position: fixed;
 }
 
 @font-face {

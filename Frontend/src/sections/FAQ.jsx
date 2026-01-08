@@ -25,11 +25,12 @@ const faqData = [
 ];
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex(index);
   };
+
 
   return (
     <div className='w-full h-fit overflow-hidden relative py-16 px-10 lg:py-24 lg:px-14'>
@@ -43,41 +44,46 @@ const FAQ = () => {
           Here are some of the most frequently asked questions about our automation services
         </p>
 
-        <div className='sm:w-[80%] m-auto h-full mt-14'>
-          {faqData.map((item, index) => (
-            <div
-              key={index}
-              className='w-full text-[#222222] border-b border-[#555555] mb-3'
-            >
-              {/* Question */}
-              <div
-                onClick={() => toggleFAQ(index)}
-                className='w-full flex items-center justify-between cursor-pointer py-4'
-              >
-                <p className='font-cervino uppercase sm:text-xl leading-8'>
-                  {item.q}
-                </p>
+        <div className=' flex justify-end relative '>
 
-                <IoIosArrowDown
-                  className={`text-xl transition-transform duration-300 ${
-                    activeIndex === index ? 'rotate-180' : ''
-                  }`}
-                />
-              </div>
+          <img src="https://aiero-tech-template.netlify.app/assets/images/layers/layer2.png" alt="" className=' w-[45%] hidden lg:block absolute -left-40 ' />
 
-              {/* Answer */}
+          <div className=' w-full lg:w-[65%] h-full mt-14'>
+            {faqData.map((item, index) => (
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeIndex === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
-                }`}
+                key={index}
+                className='w-full text-[#222222] border-b border-[#555555] mb-3'
               >
-                <p className='font-cervino text-sm sm:text-base leading-8 text-[#777777] pb-5'>
-                  {item.a}
-                </p>
+                {/* Question */}
+                <div
+                  onClick={() => toggleFAQ(index)}
+                  className='w-full flex items-center justify-between cursor-pointer py-4'
+                >
+                  <p className='font-cervino uppercase sm:text-2xl leading-8'>
+                    {item.q}
+                  </p>
+
+                  <IoIosArrowDown
+                    className={`text-xl transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''
+                      }`}
+                  />
+                </div>
+
+                {/* Answer */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${activeIndex === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                  <p className='font-cervino text-sm sm:text-base leading-8 text-[#777777] pb-5'>
+                    {item.a}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+
 
       </div>
     </div>
@@ -85,3 +91,4 @@ const FAQ = () => {
 };
 
 export default FAQ;
+

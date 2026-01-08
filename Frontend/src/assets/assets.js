@@ -36,6 +36,8 @@ import Fabric_AI_Model from "./Fabric-AI-Model.png"
 import Fabric from "./Fabric.png"
 import f1 from "./f1.png"
 import f2 from "./f2.png"
+import sparkler from "./sparkler.png"
+import why_choose_us from "./why-choose-us.jpeg"
 
 export const assets = {
     HeroArtOject,
@@ -74,4 +76,6 @@ export const assets = {
     Fabric,
     f1,
     f2,
+    sparkler,
+    why_choose_us,
 };

@@ -65,31 +65,69 @@ const FactsSection = () => {
     function StatBlock({ stat, delay = 0 }) {
         const { ref, isInView } = useInView();
 
+        // Extract number & suffix (e.g. 96 + %)
+        const numericValue = parseInt(stat.value, 10);
+        const suffix = stat.value.replace(/[0-9]/g, "");
+
+        const count = useCountUp(numericValue, isInView, 1500);
+
         return (
             <article
                 ref={ref}
                 className={`
-                    w-full h-full
-                    transform transition-all duration-700 ease-out text-center sm:text-start
-                    ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                `}
+        w-full h-full
+        transform transition-all duration-700 ease-out text-center sm:text-start
+        ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+      `}
                 style={{ transitionDelay: `${delay}ms` }}
             >
-                <p className='font-poppins font-bold text-8xl text-[#B4B4B4] leading-20 uppercase mb-3'>
-                    {stat.value}
+                <p className="font-poppins font-bold text-8xl text-[#B4B4B4] leading-20 uppercase mb-3">
+                    {count}
+                    {suffix}
                 </p>
-                <h2 className='font-cervino font-semibold text-2xl text-[#222222] leading-7 uppercase mb-3'>
+
+                <h2 className="font-cervino font-semibold text-2xl text-[#222222] leading-7 uppercase mb-3">
                     {stat.title}
                 </h2>
-                <p className='font-cervino text-base leading-7 text-[#666666]'>
+
+                <p className="font-cervino text-base leading-7 text-[#666666]">
                     {stat.description}
                 </p>
             </article>
-        )
+        );
     }
+
 
     // Top text block animation
     const { ref: headerRef, isInView: headerInView } = useInView();
+
+    const useCountUp = (target, isInView, duration = 1500) => {
+        const [count, setCount] = useState(0);
+
+        useEffect(() => {
+            if (!isInView) return;
+
+            let start = null;
+            const end = Number(target);
+
+            const animate = (timestamp) => {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const percentage = Math.min(progress / duration, 1);
+
+                setCount(Math.floor(percentage * end));
+
+                if (percentage < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            requestAnimationFrame(animate);
+        }, [isInView, target, duration]);
+
+        return count;
+    };
+
 
     return (
         <div className='w-full min-h-screen overflow-hidden relative py-16 px-10 lg:py-24 lg:px-14 ' id='about-us'>

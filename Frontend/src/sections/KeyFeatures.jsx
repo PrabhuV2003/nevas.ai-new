@@ -220,8 +220,10 @@ const KeyFeatures = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`rounded-xl cursor-pointer p-5 text-left uppercase font-cervino transition-all ${isActive
-                    ? 'bg-gradient-to-r from-[#FA9E59] via-[#24AFCD] to-[#DE8DC9] shadow-md text-white'
-                    : 'border border-[#666] text-[#666] hover:text-[#222]'
+                    // ? 'bg-gradient-to-r from-[#FA9E59] via-[#24AFCD] to-[#DE8DC9] shadow-md text-white'
+                    ? 'bg-gradient-to-r from-[#FA9E597e] via-[#24AFCD7e] to-[#DE8DC97e] shadow-md text-black'
+                    // ? ' bg-white shadow-md text-black'
+                    : ' bg-white'
                     }`}
                 >
                   {tab.title}

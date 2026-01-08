@@ -18,6 +18,7 @@ import BackToTop from './compoenents/BackToTop';
 import AiTeamSection from './sections/AiTeamSection';
 import AiSpecializations from './sections/AiSpecializations';
 import OurWorkProcess from './sections/WhyChooseUs';
+import SmoothScroll from './compoenents/SmoothScroll';
 
 const App = () => {
 
@@ -29,23 +30,27 @@ const App = () => {
 
   return (
     <div className=' bg-[#F2F2F2] '>
-      <HeroSection />
-      <TrustedBySection />
-      <FactsSection />
-      <KeyFeatures />
-      <OurExpertSection />
-      <AiSpecializations />
-      <AiTeamSection />
-      {/* <OurMission />
-      <CTA /> */}
-      {/* <Testimonial /> */}
-      <OurWorkProcess />
-      <YtVideos />
-      <FAQ />
-      <ContactSection />
-      <Footer />
+      <SmoothScroll>
+        
+        <HeroSection />
+        <TrustedBySection />
+        <FactsSection />
+        <KeyFeatures />
+        <OurExpertSection />
+        <AiSpecializations />
+        <AiTeamSection />
+        {/* <OurMission />
+        <CTA /> */}
+        {/* <Testimonial /> */}
+        <OurWorkProcess />
+        <YtVideos />
+        <FAQ />
+        <ContactSection />
+        <Footer />
 
-      <BackToTop />
+        <BackToTop />
+
+      </SmoothScroll>
     </div>
   )
 }

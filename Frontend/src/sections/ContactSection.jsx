@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6"
 import { IoMdMail } from "react-icons/io"
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6"
 import { SiInstagram } from "react-icons/si"
-import { assets } from '../assets/assets'
+import { assets } from "../assets/assets";
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -38,6 +38,25 @@ const useInView = (threshold = 0.1) => {
 const ContactSection = () => {
   const { ref: leftRef, isInView: leftInView } = useInView()
   const { ref: rightRef, isInView: rightInView } = useInView()
+
+  const socialLinks = [
+    {
+      icon: FaFacebookF,
+      url: "https://www.facebook.com/nevasaiconsulting", // change to real link
+      label: "Facebook",
+    },
+    {
+      icon: SiInstagram,
+      url: "https://www.instagram.com/nevas.ai/",
+      label: "Instagram",
+    },
+    {
+      icon: FaLinkedinIn,
+      url: "https://www.linkedin.com/company/nevasai/",
+      label: "LinkedIn",
+    },
+  ]
+
 
   /* ---------- Form State ---------- */
   const [formData, setFormData] = useState({
@@ -108,7 +127,7 @@ const ContactSection = () => {
 
   return (
     <section id='contact' className="relative w-full overflow-hidden py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-14">
-      
+
       {/* Toast Container */}
       <ToastContainer />
 
@@ -149,13 +168,20 @@ const ContactSection = () => {
                 </div>
                 <div className="flex gap-6 items-start">
                   <FaLocationDot className="mt-1" />
-                  <span>39, Elumalai Street, West Tambaram Chennai - 600 045, India</span>
+                  <span>39, Elumalai Street, West Tambaram <br /> Chennai 600 045, India</span>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                {[FaFacebookF, SiInstagram, FaLinkedinIn].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition">
+                {socialLinks.map(({ icon: Icon, url, label }, i) => (
+                  <a
+                    key={i}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition"
+                  >
                     <Icon />
                   </a>
                 ))}

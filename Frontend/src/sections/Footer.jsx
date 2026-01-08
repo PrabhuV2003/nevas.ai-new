@@ -1,5 +1,5 @@
 import React from 'react'
-import { assets } from '../assets/assest'
+import { assets } from "../assets/assets";
 import { FaSquareFacebook, FaSquareInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -54,14 +54,20 @@ const Footer = () => {
               Contact
             </p>
             <div className="flex flex-col gap-2 text-sm sm:text-base text-[#4D5053]">
-              <span>11201 contact@interno.com</span>
-              <span>(123) 456 - 7890</span>
+              <span>info@nevastech.com</span>
+              <span>+91 9884042931</span>
             </div>
 
             <div className="flex gap-5 text-2xl mt-6">
-              <FaSquareFacebook />
-              <FaLinkedin />
-              <FaSquareInstagram />
+              <a href="https://www.facebook.com/nevasaiconsulting">
+                <FaSquareFacebook />
+              </a>
+              <a href="https://www.linkedin.com/company/nevasai/">
+                <FaLinkedin />
+              </a>
+              <a href="https://www.instagram.com/nevas.ai/">
+                <FaSquareInstagram />
+              </a>
             </div>
           </div>
         </div>
@@ -72,7 +78,7 @@ const Footer = () => {
           border-t border-[#B4B4B4]  py-2 sm:pt-5">
 
           <p className="font-cervino text-sm sm:text-base font-semibold text-center">
-            © 2023 Nevas.ai - All Rights Reserved
+            © 2025 Nevas.ai - All Rights Reserved
           </p>
 
           <div className="flex items-center gap-3 font-cervino text-sm sm:text-base font-semibold">
