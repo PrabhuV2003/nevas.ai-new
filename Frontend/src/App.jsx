@@ -19,6 +19,7 @@ import AiTeamSection from './sections/AiTeamSection';
 import AiSpecializations from './sections/AiSpecializations';
 import OurWorkProcess from './sections/WhyChooseUs';
 import SmoothScroll from './compoenents/SmoothScroll';
+import AboutUs from './sections/AboutUS';
 
 const App = () => {
 
@@ -39,9 +40,10 @@ const App = () => {
         <OurExpertSection />
         <AiSpecializations />
         <AiTeamSection />
+        <AboutUs />
         {/* <OurMission />
         <CTA /> */}
-        {/* <Testimonial /> */}
+        <Testimonial />
         <OurWorkProcess />
         <YtVideos />
         <FAQ />
